@@ -691,8 +691,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
             <div className="transform translate-y-0 transition-transform duration-500">
               <h3 className="text-[24px] text-white mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>{service.name}</h3>
-              <p className="text-[14px] text-white line-clamp-2 mb-1">{service.description}</p>
-              <span className="text-white font-bold">{service.price}</span>
+              <p className="text-[14px] text-white line-clamp-2 mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>{service.description}</p>
+              <span className="text-white font-bold" style={{ fontFamily: 'Poppins, sans-serif' }}>{service.price}</span>
             </div>
           </div>
         </div>
