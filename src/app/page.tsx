@@ -710,7 +710,7 @@ function Services() {
         <RevealOnScroll>
           <div className="text-center mb-16">
             <span className="inline-block text-pink-500 text-sm tracking-[0.3em] uppercase mb-4">Serviços</span>
-            <h2 id="servicos-title" className="heading-style-h3 text-black">Nossos Serviços</h2>
+            <h2 id="servicos-title" className="heading-style-h3 text-black" style={{ fontFamily: 'Poppins, sans-serif' }}>Nossos Serviços</h2>
           </div>
         </RevealOnScroll>
 
