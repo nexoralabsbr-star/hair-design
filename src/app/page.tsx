@@ -484,7 +484,7 @@ function BeforeAfter() {
   useEffect(() => {
     const interval = setInterval(() => {
       const timeSinceInteraction = Date.now() - lastInteraction;
-      if (timeSinceInteraction > 4000) {
+      if (timeSinceInteraction > 8000) {
         setCurrentIndex((prev) => (prev + 1) % portfolioItems.length);
       }
     }, 1000);
