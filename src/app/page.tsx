@@ -478,19 +478,21 @@ function ComparisonSlider({ before, after, title, onInteract }: { before: string
 
 function BeforeAfter() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [lastInteraction, setLastInteraction] = useState(0);
   const item = portfolioItems[currentIndex];
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % portfolioItems.length);
-    }, 3000);
+      const timeSinceInteraction = Date.now() - lastInteraction;
+      if (timeSinceInteraction > 3000) {
+        setCurrentIndex((prev) => (prev + 1) % portfolioItems.length);
+      }
+    }, 1000);
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [lastInteraction]);
 
   const handleSliderInteraction = () => {
-    setIsAutoPlaying(false);
+    setLastInteraction(Date.now());
   };
 
   return (
