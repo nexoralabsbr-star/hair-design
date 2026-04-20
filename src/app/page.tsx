@@ -306,7 +306,7 @@ function Hero() {
 
       <div className="relative z-10 container-large text-center px-4">
         <RevealOnScroll>
-          <h1 className="heading-style-h1 text-white mb-4 md:mb-6">
+          <h1 className="heading-style-h1 text-white mb-4 md:mb-6" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Realce Sua<br />Beleza Natural
           </h1>
         </RevealOnScroll>
