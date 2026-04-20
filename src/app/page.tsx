@@ -567,7 +567,7 @@ function Specialists() {
         <RevealOnScroll>
           <div className="text-center mb-16">
             <span className="inline-block text-pink-400 text-sm tracking-[0.3em] uppercase mb-4">Equipe Premium</span>
-            <h2 id="especialistas-title" className="heading-style-h3 text-white">
+            <h2 id="especialistas-title" className="heading-style-h3 text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Nossos Especialistas
             </h2>
             <p className="mt-4 text-zinc-400 max-w-xl mx-auto">
@@ -800,7 +800,7 @@ function Contact() {
         <RevealOnScroll>
           <div className="text-center mb-16">
             <span className="inline-block text-pink-400 text-sm tracking-[0.3em] uppercase mb-4">Contato</span>
-            <h2 className="heading-style-h3 text-white">Agende Sua Experiência</h2>
+            <h2 className="heading-style-h3 text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>Agende Sua Experiência</h2>
             <p className="mt-4 text-white/60 max-w-xl mx-auto">Transforme sua beleza com nossos especialistas. Preencha o formulário e entraremos em contato pelo WhatsApp.</p>
           </div>
         </RevealOnScroll>
