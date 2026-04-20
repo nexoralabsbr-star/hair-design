@@ -392,7 +392,7 @@ function Portfolio() {
   );
 }
 
-function ComparisonSlider({ before, after, title }: { before: string; after: string; title: string }) {
+function ComparisonSlider({ before, after, title, onInteract }: { before: string; after: string; title: string; onInteract?: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -409,6 +409,7 @@ function ComparisonSlider({ before, after, title }: { before: string; after: str
     e.preventDefault();
     setIsDragging(true);
     updatePosition(e.clientX);
+    onInteract?.();
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
@@ -477,7 +478,20 @@ function ComparisonSlider({ before, after, title }: { before: string; after: str
 
 function BeforeAfter() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const item = portfolioItems[currentIndex];
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % portfolioItems.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  const handleSliderInteraction = () => {
+    setIsAutoPlaying(false);
+  };
 
   return (
     <section id="antes-depois" className="relative py-24 lg:py-32 overflow-hidden" style={{ background: "linear-gradient(180deg, #f5dee0, #f0c6c9)" }} aria-labelledby="antes-depois-title">
@@ -496,7 +510,7 @@ function BeforeAfter() {
 
         <RevealOnScroll delay={0.1}>
           <div className="relative max-w-2xl mx-auto">
-            <ComparisonSlider before={item.before} after={item.after} title={item.title} />
+            <ComparisonSlider before={item.before} after={item.after} title={item.title} onInteract={handleSliderInteraction} />
           </div>
         </RevealOnScroll>
 
