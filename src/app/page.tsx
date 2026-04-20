@@ -397,42 +397,60 @@ function ComparisonSlider({ before, after, title }: { before: string; after: str
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
 
-  const handleMove = (e: React.MouseEvent | React.TouchEvent) => {
+  const updatePosition = (clientX: number) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     const x = clientX - rect.left;
     const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
     setSliderPosition(percentage);
   };
 
-  const handleMouseDown = () => setIsDragging(true);
-  const handleMouseUp = () => setIsDragging(false);
+  const handlePointerDown = (e: React.PointerEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+    updatePosition(e.clientX);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    updatePosition(e.clientX);
+  };
+
+  const handlePointerUp = () => {
+    setIsDragging(false);
+  };
 
   useEffect(() => {
-    const handleGlobalMouseUp = () => setIsDragging(false);
-    const handleGlobalMouseMove = (e: MouseEvent) => {
-      if (isDragging && containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
-        setSliderPosition(percentage);
-      }
+    if (!isDragging) return;
+    
+    const handleGlobalPointerMove = (e: PointerEvent) => {
+      e.preventDefault();
+      updatePosition(e.clientX);
+    };
+    
+    const handleGlobalPointerUp = () => {
+      setIsDragging(false);
     };
 
-    if (isDragging) {
-      window.addEventListener('mouseup', handleGlobalMouseUp);
-      window.addEventListener('mousemove', handleGlobalMouseMove);
-    }
+    window.addEventListener('pointermove', handleGlobalPointerMove);
+    window.addEventListener('pointerup', handleGlobalPointerUp);
 
     return () => {
-      window.removeEventListener('mouseup', handleGlobalMouseUp);
-      window.removeEventListener('mousemove', handleGlobalMouseMove);
+      window.removeEventListener('pointermove', handleGlobalPointerMove);
+      window.removeEventListener('pointerup', handleGlobalPointerUp);
     };
   }, [isDragging]);
 
   return (
-    <article className="relative w-full max-w-3xl mx-auto aspect-[4/5] overflow-hidden rounded-lg select-none" ref={containerRef}>
+    <article 
+      className="relative w-full max-w-3xl mx-auto aspect-[4/5] overflow-hidden rounded-lg select-none touch-none" 
+      ref={containerRef}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerUp}
+    >
       <Image src={after} alt={`${title} - Depois`} fill className="object-cover" sizes="(max-width: 768px) 100vw, 800px" />
 
       <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
@@ -444,8 +462,6 @@ function ComparisonSlider({ before, after, title }: { before: string; after: str
         <button
           className="relative w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg cursor-ew-resize hover:scale-110 transition-transform"
           aria-label="Arraste para comparar antes e depois"
-          onMouseDown={handleMouseDown}
-          onTouchStart={handleMouseDown}
         >
           <svg className="w-6 h-6 text-black" fill="none" viewBox="0 0 24 24" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h8M8 11h8M8 15h4" />
