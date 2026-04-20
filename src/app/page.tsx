@@ -478,22 +478,10 @@ function ComparisonSlider({ before, after, title, onInteract }: { before: string
 
 function BeforeAfter() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [lastInteraction, setLastInteraction] = useState(0);
   const item = portfolioItems[currentIndex];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const timeSinceInteraction = Date.now() - lastInteraction;
-      if (timeSinceInteraction > 4000) {
-        setCurrentIndex((prev) => (prev + 1) % portfolioItems.length);
-      }
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [lastInteraction]);
-
-  const handleSliderInteraction = () => {
-    setLastInteraction(Date.now());
-  };
+  const goToPrev = () => setCurrentIndex((prev) => (prev - 1 + portfolioItems.length) % portfolioItems.length);
+  const goToNext = () => setCurrentIndex((prev) => (prev + 1) % portfolioItems.length);
 
   return (
     <section id="antes-depois" className="relative py-24 lg:py-32 overflow-hidden" style={{ background: "linear-gradient(180deg, #f5dee0, #f0c6c9)" }} aria-labelledby="antes-depois-title">
@@ -512,7 +500,17 @@ function BeforeAfter() {
 
         <RevealOnScroll delay={0.1}>
           <div className="relative max-w-2xl mx-auto">
-            <ComparisonSlider before={item.before} after={item.after} title={item.title} onInteract={handleSliderInteraction} />
+            <ComparisonSlider before={item.before} after={item.after} title={item.title} />
+            <button onClick={goToPrev} className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors md:left-4 md:w-12 md:h-12" aria-label="Anterior">
+              <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button onClick={goToNext} className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors md:right-4 md:w-12 md:h-12" aria-label="Próximo">
+              <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </RevealOnScroll>
 
