@@ -494,7 +494,7 @@ function BeforeAfter() {
         <RevealOnScroll>
           <div className="text-center mb-16">
             <span className="inline-block text-pink-500 text-sm tracking-[0.3em] uppercase mb-4">Transformação</span>
-            <h2 id="antes-depois-title" className="heading-style-h3 text-black">Antes & Depois</h2>
+            <h2 id="antes-depois-title" className="heading-style-h3 text-black" style={{ fontFamily: 'Poppins, sans-serif' }}>Antes & Depois</h2>
           </div>
         </RevealOnScroll>
 
