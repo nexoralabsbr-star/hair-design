@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html class="w-mod-js w-mod-ix wf-poppins-n4-active wf-poppins-n7-active wf-poppins-n1-active wf-playfairdisplaysc-n4-active wf-active" data-wf-domain="belloa.webflow.io" data-wf-page="65f8457bc27e243a4561a820" data-wf-site="65dee0b51401436905b7143b" lang="en" style="scroll-behavior: auto;">
+<head>
+    <meta charset="utf-8"/>
+    <title>Belloa Design System</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="Webflow" name="generator"/>
+    <link href="assets/belloa_8e3598672c45.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <script src="assets/webfont_3a3adf980c7d.js" type="text/javascript"></script>
+    <link href="assets/css_35a69304e908.css" media="all" rel="stylesheet"/>
+    <script type="text/javascript">WebFont.load({google:{families:["Playfair Display SC:regular","Poppins:100,regular,700"]}});</script>
+    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+    <style>
+        :root {
+            --color--pink-1: #f0c6c9;
+            --color--pink-2: #f5dee0;
+            --color--black: #272222;
+            --color--white: white;
+            --color--gold: #c4a35a;
+        }
+        .ds-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--color--black);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .ds-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+        .ds-nav a:hover {
+            color: var(--color--pink-1);
+        }
+        .ds-nav-title {
+            font-weight: 700;
+            margin-right: auto;
+        }
+        .ds-content {
+            padding-top: 5rem;
+        }
+        .ds-section {
+            padding: 5rem 5%;
+            border-bottom: 1px solid #eee;
+        }
+        .ds-section-header {
+            margin-bottom: 3rem;
+        }
+        .ds-section-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--color--black);
+        }
+        .ds-section-desc {
+            color: #666;
+        }
+        .ds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .ds-typography-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .ds-typography-preview {
+            flex: 1;
+        }
+        .ds-typography-meta {
+            font-size: 0.875rem;
+            color: #888;
+            white-space: nowrap;
+            margin-left: 2rem;
+        }
+        .ds-color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .ds-color-swatch {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .ds-color-preview {
+            height: 100px;
+        }
+        .ds-color-info {
+            padding: 1rem;
+            background: #fff;
+        }
+        .ds-color-name {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .ds-color-value {
+            font-size: 0.875rem;
+            color: #666;
+            font-family: monospace;
+        }
+        .ds-button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .ds-button-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+        .ds-button-label {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .ds-spacing-item {
+            background: var(--color--pink-2);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .ds-spacing-label {
+            position: absolute;
+            bottom: -1.5rem;
+            left: 0;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        .ds-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .ds-gradient-preview {
+            height: 120px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .ds-gradient-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .ds-gradient-value {
+            font-size: 0.75rem;
+            color: #666;
+            font-family: monospace;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <nav class="ds-nav">
+        <a href="#hero" class="ds-nav-title">Belloa Design System</a>
+        <a href="#typography">Typography</a>
+        <a href="#colors">Colors</a>
+        <a href="#components">Components</a>
+        <a href="#layout">Layout</a>
+        <a href="#motion">Motion</a>
+    </nav>
+
+    <div class="ds-content">
+        <section id="hero" class="section-home-hero">
+            <div class="padding-global">
+                <div class="container-large">
+                    <div class="padding-section-large is-hero">
+                        <div class="home-hero-layout">
+                            <div class="margin-bottom margin-xxlarge">
+                                <div class="home-hero-content-wrapper" id="w-node-b72248fe-316f-948e-eac9-38d83f73afa5-4561a820">
+                                    <div class="max-width-full" id="w-node-b72248fe-316f-948e-eac9-38d83f73afa6-4561a820">
+                                        <div class="max-width-xlarge">
+                                            <div class="margin-bottom margin-small">
+                                                <h1 class="heading-style-h1">Belloa Design System</h1>
+                                            </div>
+                                        </div>
+                                        <div class="max-width-large">
+                                            <div class="margin-bottom margin-xlarge">
+                                                <p class="text-size-large">Your comprehensive guide to the Belloa design language. This document showcases all typography, colors, components, and patterns used throughout the design.</p>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <a class="button-hero w-inline-block" href="#typography">
+                                                <div class="button-icon w-embed">
+                                                    <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M16.125 10.1252C16.125 10.4235 16.0065 10.7097 15.7955 10.9207C15.5846 11.1316 15.2984 11.2502 15 11.2502H9.00005C8.70168 11.2502 8.41553 11.1316 8.20455 10.9207C7.99358 10.7097 7.87505 10.4235 7.87505 10.1252C7.87505 9.82679 7.99358 9.54064 8.20455 9.32967C8.41553 9.11869 8.70168 9.00016 9.00005 9.00016H15C15.2984 9.00016 15.5846 9.11869 15.7955 9.32967C16.0065 9.54064 16.125 9.82679 16.125 10.1252ZM15 12.7502H9.00005C8.70168 12.7502 8.41553 12.8687 8.20455 13.0797C7.99358 13.2906 7.87505 13.5768 7.87505 13.8752C7.87505 14.1735 7.99358 14.4597 8.20455 14.6707C8.41553 14.8816 8.70168 15.0002 9.00005 15.0002H15C15.2984 15.0002 15.5846 14.8816 15.7955 14.6707C16.0065 14.4597 16.125 14.1735 16.125 13.8752C16.125 13.5768 16.0065 13.2906 15.7955 13.0797C15.5846 12.8687 15.2984 12.7502 15 12.7502ZM22.125 12.0002C22.1254 13.7345 21.6803 15.4399 20.8323 16.9528C19.9843 18.4657 18.7619 19.7354 17.2823 20.6402C15.8027 21.545 14.1155 22.0546 12.3824 22.1201C10.6493 22.1856 8.92841 21.8048 7.38474 21.0142L4.34442 22.0314C4.01345 22.143 3.6579 22.1598 3.31784 22.0802C2.97779 22.0005 2.66675 21.8274 2.41978 21.5804C2.17281 21.3335 1.99973 21.0224 1.92005 20.6824C1.84037 20.3423 1.85725 19.9868 1.9688 19.6558L2.98224 16.6155C2.28632 15.2523 1.9085 13.7491 1.87718 12.2189C1.84585 10.6887 2.16185 9.17134 2.8014 7.78084C3.44095 6.39035 4.38741 5.16294 5.56962 4.1909C6.75184 3.21886 8.13904 2.52749 9.62693 2.16876C11.1148 1.81003 12.6647 1.79328 14.16 2.11978C15.6553 2.44628 17.0571 3.10752 18.26 4.05379C19.4629 5.00006 20.4357 6.20673 21.1052 7.58308C21.7746 8.95943 22.1233 10.4696 22.125 12.0002ZM19.875 12.0002C19.8746 10.7922 19.5963 9.6006 19.0616 8.51745C18.5269 7.43429 17.7503 6.48865 16.7917 5.75368C15.8331 5.01871 14.7182 4.5141 13.5334 4.2789C12.3486 4.0437 11.1256 4.0842 9.95894 4.39728C8.79229 4.71037 7.7133 5.28763 6.80543 6.08442C5.89757 6.88121 5.18517 7.87617 4.72334 8.99233C4.26152 10.1085 4.06264 11.3159 4.14211 12.5212C4.22157 13.7265 4.57725 14.8974 5.18161 15.7347C5.78598 16.5721 6.64237 17.2087 7.66273 17.5675C8.68309 17.9263 9.82705 17.9941 10.9907 17.7647C12.1543 17.5353 13.2124 16.9181 14.0682 16.0016C14.924 15.0852 15.5517 13.9031 15.8877 12.5926C16.2238 11.2822 16.2583 9.89165 15.9872 8.56241C15.7162 7.23317 15.1485 5.99824 14.3382 4.98768C13.528 3.97711 12.4991 3.21853 11.3428 2.77026C10.1864 2.32199 8.93453 2.19974 7.68695 2.41265C6.43938 2.62557 5.22662 3.16757 4.15166 3.99715C3.07671 4.82673 2.16587 5.92127 1.48833 7.19731C1.49498 5.62988 1.86904 4.08232 2.58154 2.67543C3.29405 1.26855 4.32847 0.030852 5.60515 -0.998625C6.88182 -2.0281 8.37015 -2.82495 9.96908 -3.34095C11.568 -3.85695 13.2469 -4.08007 14.9165 -3.98825C16.5862 -3.89643 18.2176 -3.59154 19.7214 -3.09625L22.7617 -4.11351C23.0927 -4.22512 23.4482 -4.24191 23.7883 -4.16224C24.1283 -4.08258 24.4394 -3.90944 24.6863 -3.66249C24.9333 -3.41553 25.1064 -3.10446 25.1861 -2.76441C25.2657 -2.42435 25.2489 -2.06881 25.1373 -1.73783L23.1275 3.78739C24.6522 5.24442 25.743 7.12265 26.2713 9.19908C26.7997 11.2755 26.7403 13.4639 26.101 15.5396C25.4617 17.6152 24.2747 19.4939 22.6685 20.9854C21.0623 22.4768 19.0987 23.5254 16.9608 24.0069C14.8229 24.4884 12.5858 24.3836 10.4477 23.7069C8.30952 23.0301 6.34329 21.8149 4.75241 20.1816C3.16154 18.5482 2.00353 16.5508 1.38699 14.3739C0.770444 12.197 0.716529 9.91149 1.23086 7.72762C1.74519 5.54375 2.81448 3.52987 4.3639 1.87566" fill="currentColor"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="button-text-block">
+                                                    <div class="button-text hero-button-text">Explore System</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="typography" class="ds-section">
+            <div class="ds-section-header">
+                <h2 class="ds-section-title">Typography</h2>
+                <p class="ds-section-desc">Font families: Playfair Display SC (headings), Poppins (body). Scale uses REM units.</p>
+            </div>
+            
+            <div class="ds-typography-item">
+                <div class="ds-typography-preview">
+                    <h1 class="heading-style-h1">Heading 1</h1>
+                </div>
+                <div class="ds-typography-meta">120px / 1.2</div>
+            </div>
+            
+            <div class="ds-typography-item">
+                <div class="ds-typography-preview">
+                    <h2 class="heading-style-h2">Heading 2</h2>
+                </div>
+                <div class="ds-typography-meta">96px / 1.2</div>
+            </div>
+            
+            <div class="ds-typography-item">
+                <div class="ds-typography-preview">
+                    <h3 class="heading-style-h3">Heading 3</h3>
+                </div>
+                <div class="ds-typography-meta">64px / 1.2</div>
+            </div>
+            
+            <div class="ds-typography-item">
+                <div class="ds-typography-preview">
+                    <h4 class="heading-style-h4">Heading 4</h4>
+                </div>
+                <div class="ds-typography-meta">48px / 1.3</div>
+            </div>
+            
+            <div class="ds-typography-item">
+                <div class="ds-typography-preview">
+                    <h5 class="heading-style-h6">Heading 5</h5>
+                </div>
+                <div class="ds-typography-meta">36px / 1.3</div>
+            </div>
+            
+            <div class="ds-typography-item">
+                <div class="ds-typography-preview">
+                    <p class="text-size-large">Large Body Text</p>
+                </div>
+                <div class="ds-typography-meta">20px / 1.5</div>
+            </div>
+            
+            <div class="ds-typography-item">
+                <div class="ds-typography-preview">
+                    <p class="text-size-regular">Regular Body Text</p>
+                </div>
+                <div class="ds-typography-meta">16px / 1.5</div>
+            </div>
+            
+            <div class="ds-typography-item">
+                <div class="ds-typography-preview">
+                    <p class="text-size-medium">Medium Body Text</p>
+                </div>
+                <div class="ds-typography-meta">18px / 1.5</div>
+            </div>
+            
+            <div class="ds-typography-item">
+                <div class="ds-typography-preview">
+                    <p class="text-size-small">Small Body Text</p>
+                </div>
+                <div class="ds-typography-meta">14px / 1.5</div>
+            </div>
+            
+            <div class="ds-typography-item">
+                <div class="ds-typography-preview">
+                    <p class="text-size-medium is-text-bold">Bold Medium Text</p>
+                </div>
+                <div class="ds-typography-meta">18px Bold / 1.5</div>
+            </div>
+        </section>
+
+        <section id="colors" class="ds-section">
+            <div class="ds-section-header">
+                <h2 class="ds-section-title">Colors & Surfaces</h2>
+                <p class="ds-section-desc">Primary palette uses soft pink tones with dark contrast. Colors defined as CSS variables.</p>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin-bottom: 2rem;">Brand Colors</h3>
+            <div class="ds-color-grid">
+                <div class="ds-color-swatch">
+                    <div class="ds-color-preview" style="background: var(--color--pink-1);"></div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Pink 1</div>
+                        <div class="ds-color-value">#f0c6c9</div>
+                    </div>
+                </div>
+                <div class="ds-color-swatch">
+                    <div class="ds-color-preview" style="background: var(--color--pink-2);"></div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Pink 2</div>
+                        <div class="ds-color-value">#f5dee0</div>
+                    </div>
+                </div>
+                <div class="ds-color-swatch">
+                    <div class="ds-color-preview" style="background: var(--color--black);"></div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name" style="color: white;">Black</div>
+                        <div class="ds-color-value" style="color: #ccc;">#272222</div>
+                    </div>
+                </div>
+                <div class="ds-color-swatch">
+                    <div class="ds-color-preview" style="background: var(--color--white); border: 1px solid #eee;"></div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">White</div>
+                        <div class="ds-color-value">#ffffff</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin: 3rem 0 2rem;">Gradients</h3>
+            <div class="ds-color-grid">
+                <div class="ds-card">
+                    <div class="ds-gradient-preview" style="background: radial-gradient(circle farthest-corner at 0% 0%, var(--color--pink-2), var(--color--pink-1));"></div>
+                    <div class="ds-gradient-name">Hero Background</div>
+                    <div class="ds-gradient-value">radial-gradient(circle at 0% 0%, #f5dee0, #f0c6c9)</div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-gradient-preview" style="background: radial-gradient(circle farthest-corner at 0% 0%, var(--color--pink-1), var(--color--white));"></div>
+                    <div class="ds-gradient-name">Services Background</div>
+                    <div class="ds-gradient-value">radial-gradient(circle at 0% 0%, #f0c6c9, #ffffff)</div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-gradient-preview" style="background: radial-gradient(circle farthest-corner at 100% 100%, var(--color--pink-1), var(--color--white));"></div>
+                    <div class="ds-gradient-name">Testimonials Background</div>
+                    <div class="ds-gradient-value">radial-gradient(circle at 100% 100%, #f0c6c9, #ffffff)</div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-gradient-preview" style="background: linear-gradient(0deg, var(--color--pink-1), var(--color--pink-2));"></div>
+                    <div class="ds-gradient-name">Footer Gradient</div>
+                    <div class="ds-gradient-value">linear-gradient(0deg, #f0c6c9, #f5dee0)</div>
+                </div>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin: 3rem 0 2rem;">Surfaces</h3>
+            <div class="ds-color-grid">
+                <div class="ds-card">
+                    <div style="height: 80px; background: var(--color--white); border: 1px solid #eee; border-radius: 4px; margin-bottom: 1rem;"></div>
+                    <div class="ds-color-name">Card Surface</div>
+                    <div class="ds-color-value">background: white; border: 1px solid #eee</div>
+                </div>
+                <div class="ds-card">
+                    <div style="height: 80px; background: var(--color--black); border-radius: 4px; margin-bottom: 1rem;"></div>
+                    <div class="ds-color-name" style="color: white;">Navbar/Footer</div>
+                    <div class="ds-color-value" style="color: #ccc;">background: #272222</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="components" class="ds-section">
+            <div class="ds-section-header">
+                <h2 class="ds-section-title">UI Components</h2>
+                <p class="ds-section-desc">Buttons with pill-shaped borders (100vw radius) and icon support.</p>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin-bottom: 2rem;">Buttons</h3>
+            <div class="ds-button-group" style="flex-direction: column; align-items: flex-start; gap: 2rem;">
+                <div class="ds-button-item">
+                    <span class="ds-button-label">Primary Button (Hero)</span>
+                    <div class="ds-button-group">
+                        <a class="button-hero w-inline-block" href="#">
+                            <div class="button-text-block">
+                                <div class="button-text hero-button-text">Book visit now</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="ds-button-item">
+                    <span class="ds-button-label">Primary Button</span>
+                    <div class="ds-button-group">
+                        <a class="button-primary w-inline-block" href="#">
+                            <div class="button-icon w-embed">
+                                <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.125 10.1252C16.125 10.4235 16.0065 10.7097 15.7955 10.9207C15.5846 11.1316 15.2984 11.2502 15 11.2502H9.00005C8.70168 11.2502 8.41553 11.1316 8.20455 10.9207C7.99358 10.7097 7.87505 10.4235 7.87505 10.1252C7.87505 9.82679 7.99358 9.54064 8.20455 9.32967C8.41553 9.11869 8.70168 9.00016 9.00005 9.00016H15C15.2984 9.00016 15.5846 9.11869 15.7955 9.32967C16.0065 9.54064 16.125 9.82679 16.125 10.1252ZM15 12.7502H9.00005C8.70168 12.7502 8.41553 12.8687 8.20455 13.0797C7.99358 13.2906 7.87505 13.5768 7.87505 13.8752C7.87505 14.1735 7.99358 14.4597 8.20455 14.6707C8.41553 14.8816 8.70168 15.0002 9.00005 15.0002H15C15.2984 15.0002 15.5846 14.8816 15.7955 14.6707C16.0065 14.4597 16.125 14.1735 16.125 13.8752C16.125 13.5768 16.0065 13.2906 15.7955 13.0797C15.5846 12.8687 15.2984 12.7502 15 12.7502ZM22.125 12.0002C22.1254 13.7345 21.6803 15.4399 20.8323 16.9528C19.9843 18.4657 18.7619 19.7354 17.2823 20.6402C15.8027 21.545 14.1155 22.0546 12.3824 22.1201C10.6493 22.1856 8.92841 21.8048 7.38474 21.0142L4.34442 22.0314C4.01345 22.143 3.6579 22.1598 3.31784 22.0802C2.97779 22.0005 2.66675 21.8274 2.41978 21.5804C2.17281 21.3335 1.99973 21.0224 1.92005 20.6824C1.84037 20.3423 1.85725 19.9868 1.9688 19.6558L2.98224 16.6155C2.28632 15.2523 1.9085 13.7491 1.87718 12.2189C1.84585 10.6887 2.16185 9.17134 2.8014 7.78084C3.44095 6.39035 4.38741 5.16294 5.56962 4.1909C6.75184 3.21886 8.13904 2.52749 9.62693 2.16876C11.1148 1.81003 12.6647 1.79328 14.16 2.11978C15.6553 2.44628 17.0571 3.10752 18.26 4.05379C19.4629 5.00006 20.4357 6.20673 21.1052 7.58308C21.7746 8.95943 22.1233 10.4696 22.125 12.0002Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="button-text-block">
+                                <div class="button-text">Learn More</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="ds-button-item">
+                    <span class="ds-button-label">Secondary Button</span>
+                    <div class="ds-button-group">
+                        <a class="button-secondary w-inline-block" href="#">
+                            <div class="button-icon seccondary-button-icon w-embed">
+                                <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 4.125H3C2.70163 4.125 2.41548 4.24353 2.2045 4.4545C1.99353 4.66548 1.875 4.95163 1.875 5.25V18C1.875 18.4973 2.07254 18.9742 2.42417 19.3258C2.77581 19.6775 3.25272 19.875 3.75 19.875H20.25C20.7473 19.875 21.2242 19.6775 21.5758 19.3258C21.9275 18.9742 22.125 18.4973 22.125 18V5.25C22.125 4.95163 22.0065 4.66548 21.7955 4.4545C21.5845 4.24353 21.2984 4.125 21 4.125ZM12 11.9738L5.89219 6.375H18.1078L12 11.9738ZM8.69906 12L4.125 16.1925V7.8075L8.69906 12ZM10.3641 13.5262L11.2397 14.3297C11.4472 14.52 11.7185 14.6255 12 14.6255C12.2815 14.6255 12.5528 14.52 12.7603 14.3297L13.6359 13.5262L18.1078 17.625H5.89219L10.3641 13.5262ZM15.3009 12L19.875 7.8075V16.1925L15.3009 12Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="button-text-block">
+                                <div class="button-text secondary-button-text">Contact</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin: 3rem 0 2rem;">Icons</h3>
+            <div class="ds-grid" style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
+                <div class="ds-card" style="text-align: center;">
+                    <div class="testimonial-icon w-embed" style="display: inline-block; margin-bottom: 0.5rem;">
+                        <svg fill="none" height="32" viewbox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30 11.75C30 20.5 17.0262 27.5825 16.4737 27.875C16.3281 27.9533 16.1654 27.9943 16 27.9943C15.8346 27.9943 15.6719 27.9533 15.5262 27.875C14.9737 27.5825 2 20.5 2 11.75C2.00232 9.69528 2.81958 7.72539 4.27248 6.27248C5.72539 4.81958 7.69528 4.00232 9.75 4C12.3312 4 14.5912 5.11 16 6.98625C17.4088 5.11 19.6688 4 22.25 4C24.3047 4.00232 26.2746 4.81958 27.7275 6.27248C29.1804 7.72539 29.9977 9.69528 30 11.75Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="ds-color-value">Star Rating</div>
+                </div>
+                <div class="ds-card" style="text-align: center;">
+                    <div class="icon-embed-small w-embed" style="display: inline-block; margin-bottom: 0.5rem;">
+                        <svg fill="none" height="32" viewbox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.5 16C28.5 16.3978 28.342 16.7794 28.0607 17.0607C27.7794 17.342 27.3978 17.5 27 17.5H17.5V27C17.5 27.3978 17.342 27.7794 17.0607 28.0607C16.7794 28.342 16.3978 28.5 16 28.5C15.6022 28.5 15.2206 28.342 14.9393 28.0607C14.658 27.7794 14.5 27.3978 14.5 27V17.5H5C4.60218 17.5 4.22064 17.342 3.93934 17.0607C3.65804 16.7794 3.5 16.3978 3.5 16C3.5 15.6022 3.65804 15.2206 3.93934 14.9393C4.22064 14.658 4.60218 14.5 5 14.5H14.5V5C14.5 4.60218 14.658 4.22064 14.9393 3.93934C15.2206 3.65804 15.6022 3.5 16 3.5C16.3978 3.5 16.7794 3.65804 17.0607 3.93934C17.342 4.22064 17.5 4.60218 17.5 5V14.5H27C27.3978 14.5 27.7794 14.658 28.0607 14.9393C28.342 15.2206 28.5 15.6022 28.5 16Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="ds-color-value">FAQ Plus</div>
+                </div>
+                <div class="ds-card" style="text-align: center;">
+                    <div class="button-icon w-embed" style="display: inline-block; margin-bottom: 0.5rem;">
+                        <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.125 10.1252C16.125 10.4235 16.0065 10.7097 15.7955 10.9207C15.5846 11.1316 15.2984 11.2502 15 11.2502H9.00005C8.70168 11.2502 8.41553 11.1316 8.20455 10.9207C7.99358 10.7097 7.87505 10.4235 7.87505 10.1252C7.87505 9.82679 7.99358 9.54064 8.20455 9.32967C8.41553 9.11869 8.70168 9.00016 9.00005 9.00016H15C15.2984 9.00016 15.5846 9.11869 15.7955 9.32967C16.0065 9.54064 16.125 9.82679 16.125 10.1252Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="ds-color-value">Arrow Right</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="layout" class="ds-section">
+            <div class="ds-section-header">
+                <h2 class="ds-section-title">Layout & Spacing</h2>
+                <p class="ds-section-desc">Container widths, padding scales, and grid patterns.</p>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin-bottom: 2rem;">Containers</h3>
+            <div class="ds-grid">
+                <div class="ds-card">
+                    <div class="ds-color-name">Container Large</div>
+                    <div class="ds-color-value">max-width: 80rem (1280px)</div>
+                    <div class="ds-color-value">margin: 0 auto</div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-color-name">Container Medium</div>
+                    <div class="ds-color-value">max-width: 64rem (1024px)</div>
+                    <div class="ds-color-value">margin: 0 auto</div>
+                </div>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin: 3rem 0 2rem;">Padding Scale</h3>
+            <div class="ds-grid">
+                <div class="ds-card">
+                    <div class="ds-spacing-item" style="height: 80px;"></div>
+                    <span class="ds-spacing-label">padding-section-large: 160px</span>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-spacing-item" style="height: 60px;"></div>
+                    <span class="ds-spacing-label">padding-section-medium: 96px</span>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-spacing-item" style="height: 40px;"></div>
+                    <span class="ds-spacing-label">padding-section-small: 48px</span>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-spacing-item" style="height: 24px;"></div>
+                    <span class="ds-spacing-label">padding-medium: 32px</span>
+                </div>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin: 3rem 0 2rem;">Margin Scale</h3>
+            <div class="ds-grid">
+                <div class="ds-card">
+                    <div class="ds-color-name">margin-xxlarge</div>
+                    <div class="ds-color-value">5rem (80px)</div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-color-name">margin-xlarge</div>
+                    <div class="ds-color-value">4rem (64px)</div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-color-name">margin-large</div>
+                    <div class="ds-color-value">3rem (48px)</div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-color-name">margin-medium</div>
+                    <div class="ds-color-value">2rem (32px)</div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-color-name">margin-small</div>
+                    <div class="ds-color-value">1rem (16px)</div>
+                </div>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin: 3rem 0 2rem;">Layout Patterns</h3>
+            <div class="ds-grid">
+                <div class="ds-card">
+                    <div class="ds-color-name">Hero Layout</div>
+                    <div class="ds-color-value">Flexbox: content left, image right (50/50 on desktop)</div>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                        <div style="flex: 1; height: 100px; background: var(--color--pink-1); border-radius: 4px;"></div>
+                        <div style="flex: 1; height: 100px; background: var(--color--pink-2); border-radius: 4px;"></div>
+                    </div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-color-name">Grid Layout</div>
+                    <div class="ds-color-value">CSS Grid: auto-fill columns (min 300px)</div>
+                    <div style="margin-top: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;">
+                        <div style="height: 60px; background: var(--color--pink-1); border-radius: 4px;"></div>
+                        <div style="height: 60px; background: var(--color--pink-2); border-radius: 4px;"></div>
+                        <div style="height: 60px; background: var(--color--pink-1); border-radius: 4px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="motion" class="ds-section">
+            <div class="ds-section-header">
+                <h2 class="ds-section-title">Motion & Interaction</h2>
+                <p class="ds-section-desc">Transform animations, transitions, and hover effects.</p>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin-bottom: 2rem;">Transitions</h3>
+            <div class="ds-grid">
+                <div class="ds-card">
+                    <div class="ds-color-name">Default Transition</div>
+                    <div class="ds-color-value">transition: all 0.2s ease</div>
+                    <div style="margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-radius: 4px; transition: all 0.2s ease;">
+                        Hover to see transition
+                    </div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-color-name">Button Transitions</div>
+                    <div class="ds-color-value">transition: color .2s, border-color .2s</div>
+                    <a class="button-primary" href="#" style="margin-top: 1rem; display: inline-block;">
+                        <span class="button-text">Sample Button</span>
+                    </a>
+                </div>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin: 3rem 0 2rem;">Transform Patterns</h3>
+            <div class="ds-grid">
+                <div class="ds-card">
+                    <div class="ds-color-name">Entrance Animation</div>
+                    <div class="ds-color-value">transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1)</div>
+                    <div class="ds-color-value">opacity: 1</div>
+                    <div style="margin-top: 1rem; height: 80px; background: var(--color--pink-1); border-radius: 4px; opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);"></div>
+                </div>
+                <div class="ds-card">
+                    <div class="ds-color-name">Button Icon Scale</div>
+                    <div class="ds-color-value">transform: scale3d(0, 0, 1) on hover becomes scale3d(1, 1, 1)</div>
+                    <div style="margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 24px; height: 24px; background: var(--color--black); border-radius: 50%;"></div>
+                        <span style="font-size: 0.875rem;">Icon appears on hover</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="heading-style-h4" style="margin: 3rem 0 2rem;">Animation Classes</h3>
+            <div class="ds-card">
+                <div class="ds-color-name">Common Animation Utilities</div>
+                <div style="margin-top: 1rem;">
+                    <div style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                        <code style="color: #d63384;">transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)</code>
+                    </div>
+                    <div style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                        <code style="color: #d63384;">transform-style: preserve-3d</code>
+                    </div>
+                    <div style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                        <code style="color: #d63384;">will-change: transform</code>
+                    </div>
+                    <div style="padding: 0.5rem 0;">
+                        <code style="color: #d63384;">data-w-id for Webflow interactions</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer style="background: var(--color--black); color: white; padding: 3rem 5%; text-align: center;">
+            <p class="text-size-regular" style="color: white;">Belloa Design System - Based on Webflow HTML Template</p>
+            <p class="text-size-small" style="color: #888; margin-top: 1rem;">All styles and components extracted from original belloa.webflow.io</p>
+        </footer>
+    </div>
+</body>
+</html>
