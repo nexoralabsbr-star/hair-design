@@ -19,7 +19,7 @@ const specialists = [
 ];
 
 const services = [
-  { id: 1, name: "Corte & Styling Premium", price: "R$ 180", description: "Corte personalizado com styling profissional, usando produtos premium e técnicas exclusivas para valorizar seu estilo único.", icon: "✂️" },
+  { id: 1, name: "Corte & Styling Premium", price: "R$ 180", description: "Corte personalizado com styling profissional, usando produtos premium e técnicas exclusivas para valorizar seu estilo único.", icon: "✂️", image: "/assets/images/servicos/001.png" },
   { id: 2, name: "Coloração & Mechas", price: "R$ 350", description: "Coloração profissional com mechas, balayage ou ombre hair. Produtos de alta qualidade para um resultado natural e duradouro.", icon: "🎨" },
   { id: 3, name: "Tratamentos Capilares", price: "R$ 220", description: "Tratamentos regenerativos, hidratação profunda e reconstrução. Recupere a saúde e brilho dos seus cabelos.", icon: "💆" },
   { id: 4, name: "Maquiagem Editorial", price: "R$ 280", description: "Maquiagem profissional para eventos, ensaios fotográficos ou ocasiões especiais. Técnicas de iluminação e acabamento premium.", icon: "💄" },
@@ -663,13 +663,18 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         }}
       >
         <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+          {service.image && (
+            <Image src={service.image} alt={service.name} fill className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
           
           <div className="absolute inset-0 bg-gradient-to-br from-pink-500/30 via-pink-500/10 to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
 
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">{service.icon}</span>
-          </div>
+          {!service.image && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">{service.icon}</span>
+            </div>
+          )}
 
           <div className="absolute inset-x-0 bottom-0 p-6">
             <div className="transform translate-y-0 group-hover:translate-y-[-8px] transition-transform duration-500">
