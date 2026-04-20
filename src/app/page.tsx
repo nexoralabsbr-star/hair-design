@@ -20,11 +20,11 @@ const specialists = [
 
 const services = [
   { id: 1, name: "Corte & Styling Premium", price: "R$ 180", description: "Corte personalizado com styling profissional, usando produtos premium e técnicas exclusivas para valorizar seu estilo único.", icon: "✂️", image: "/assets/images/servicos/001.png" },
-  { id: 2, name: "Coloração & Mechas", price: "R$ 350", description: "Coloração profissional com mechas, balayage ou ombre hair. Produtos de alta qualidade para um resultado natural e duradouro.", icon: "🎨" },
-  { id: 3, name: "Tratamentos Capilares", price: "R$ 220", description: "Tratamentos regenerativos, hidratação profunda e reconstrução. Recupere a saúde e brilho dos seus cabelos.", icon: "💆" },
-  { id: 4, name: "Maquiagem Editorial", price: "R$ 280", description: "Maquiagem profissional para eventos, ensaios fotográficos ou ocasiões especiais. Técnicas de iluminação e acabamento premium.", icon: "💄" },
-  { id: 5, name: "Manicure & Pedicure Spa", price: "R$ 150", description: "Tratamento completo para mãos e pés com massagem relaxante, esmalte semipermanente ou tradicional.", icon: "💅" },
-  { id: 6, name: "Spa Capilar", price: "R$ 190", description: "Experiência relaxante com massagem craniana, máscaras reconstrutivas e tratamento térmico para cabelos revitalizados.", icon: "🌿" },
+  { id: 2, name: "Coloração & Mechas", price: "R$ 350", description: "Coloração profissional com mechas, balayage ou ombre hair. Produtos de alta qualidade para um resultado natural e duradouro.", icon: "🎨", image: "/assets/images/servicos/002.png" },
+  { id: 3, name: "Tratamentos Capilares", price: "R$ 220", description: "Tratamentos regenerativos, hidratação profunda e reconstrução. Recupere a saúde e brilho dos seus cabelos.", icon: "💆", image: "/assets/images/servicos/003.png" },
+  { id: 4, name: "Maquiagem Editorial", price: "R$ 280", description: "Maquiagem profissional para eventos, ensaios fotográficos ou ocasiões especiais. Técnicas de iluminação e acabamento premium.", icon: "💄", image: "/assets/images/servicos/004.png" },
+  { id: 5, name: "Manicure & Pedicure Spa", price: "R$ 150", description: "Tratamento completo para mãos e pés com massagem relaxante, esmalte semipermanente ou tradicional.", icon: "💅", image: "/assets/images/servicos/005.png" },
+  { id: 6, name: "Spa Capilar", price: "R$ 190", description: "Experiência relaxante com massagem craniana, máscaras reconstrutivas e tratamento térmico para cabelos revitalizados.", icon: "🌿", image: "/assets/images/servicos/006.png" },
 ];
 
 // Animation durations based on ui-ux-pro-max: 150-300ms for micro-interactions
