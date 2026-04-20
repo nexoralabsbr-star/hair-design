@@ -680,7 +680,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             <div className="transform translate-y-0 transition-transform duration-500">
               <h3 className="text-[24px] text-white mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>{service.name}</h3>
               <p className="text-[14px] text-white line-clamp-2 mb-1">{service.description}</p>
-              <span className="text-[--gold] font-medium">{service.price}</span>
+              <span className="text-white font-bold">{service.price}</span>
             </div>
           </div>
         </div>
@@ -882,7 +882,7 @@ function Contact() {
                           <SelectItem key={service.id} value={String(service.id)} className="text-white">
                             <span className="flex justify-between w-full gap-4">
                               <span>{service.name}</span>
-                              <span className="text-[--gold]">{service.price}</span>
+                              <span className="text-white font-bold">{service.price}</span>
                             </span>
                           </SelectItem>
                         ))}
