@@ -664,11 +664,11 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       >
         <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
           {service.image && (
-            <Image src={service.image} alt={service.name} fill className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+            <Image src={service.image} alt={service.name} fill className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/50 to-transparent opacity-80 group-hover:opacity-0 transition-opacity duration-500" />
           
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/30 via-pink-500/10 to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/30 via-pink-500/10 to-transparent opacity-50 group-hover:opacity-0 transition-opacity duration-500" />
 
           {!service.image && (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -676,8 +676,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             </div>
           )}
 
-          <div className="absolute inset-x-0 bottom-0 p-6">
-            <div className="transform translate-y-0 group-hover:translate-y-[-8px] transition-transform duration-500">
+          <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
+            <div className="transform translate-y-0 transition-transform duration-500">
               <h3 className="text-xl heading-style-h5 text-white mb-2">{service.name}</h3>
               <p className="text-zinc-300 text-sm line-clamp-2 mb-3">{service.description}</p>
               <span className="text-[--gold] font-medium">{service.price}</span>
