@@ -681,8 +681,6 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             <Image src={service.image} alt={service.name} fill className="object-cover group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/50 to-transparent opacity-80 group-hover:opacity-0 transition-opacity duration-500" />
-          
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/30 via-pink-500/10 to-transparent opacity-50 group-hover:opacity-0 transition-opacity duration-500" />
 
           {!service.image && (
             <div className="absolute inset-0 flex items-center justify-center">
