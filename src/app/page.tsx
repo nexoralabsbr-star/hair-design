@@ -852,7 +852,7 @@ function Contact() {
 
                   <div className="space-y-2">
                     <label htmlFor="service" className="text-sm text-white/70">Serviço desejado</label>
-                    <Select value={formData.service} onValueChange={(value) => handleChange("service", value)}>
+                    <Select value={formData.service} onValueChange={(value) => handleChange("service", value || "")}>
                       <SelectTrigger className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12">
                         <SelectValue placeholder="Selecione um serviço" />
                       </SelectTrigger>
