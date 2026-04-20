@@ -678,8 +678,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
           <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
             <div className="transform translate-y-0 transition-transform duration-500">
-              <h3 className="text-[12px] font-medium text-white mb-0.5 tracking-wide">{service.name}</h3>
-              <p className="text-[10px] text-zinc-400 line-clamp-1">{service.description}</p>
+              <h3 className="text-[18px] font-medium text-white mb-1">{service.name}</h3>
+              <p className="text-[14px] text-zinc-400 line-clamp-2 mb-1">{service.description}</p>
               <span className="text-[--gold] font-medium">{service.price}</span>
             </div>
           </div>
